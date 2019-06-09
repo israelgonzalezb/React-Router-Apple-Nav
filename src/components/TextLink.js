@@ -6,9 +6,14 @@ class TextLink extends React.Component {
   constructor(props) {
     super(props);
   }
+  
+  handleMenuItem(name) {
+    console.log(name);
+  }
 
   render() {
-    return <Link className={this.props.className} to="">{this.props.name}</Link>;
+    const lowerCaseName = this.props.name.toLowerCase();
+    return <Link className={this.props.className} onClick={()=>this.handleMenuItem(lowerCaseName)} to={`/${lowerCaseName}`}>{this.props.name}</Link>;
   }
 }
 

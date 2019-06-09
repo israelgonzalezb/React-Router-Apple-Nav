@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default class IconLink extends React.Component {
   constructor(props){
@@ -8,7 +9,9 @@ export default class IconLink extends React.Component {
   render(){
     return (
     <div>
-      <img src={`/assets/${this.props.name}_large.svg`} />
+      <Link to={`/${this.props.linksTo}`}>
+        <img src={`/assets/${this.props.name}_large.svg`} />
+      </Link>
       </div> 
     
     )
